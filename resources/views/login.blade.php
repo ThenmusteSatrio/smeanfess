@@ -12,17 +12,22 @@
 
 <body>
 
-</body>
-<div class="box">
-    <form class="form" action="{{ route('auth') }}" method="POST">
-        @csrf
-        <div class="title">Welcome,<br><span>sign up to continue</span></div>
-        <input class="input" name="name" placeholder="Name" type="text">
-        <input class="input" name="password" placeholder="Password" type="password">
-      
-        <button class="button-confirm">Masuk →</button>
-    </form>
+    <div class="box">
+        <div class="judul">
+            <h2>Smeanfess</h2>
+        </div>
+        <form class="form" action="{{ route('auth') }}" method="POST">
+            @csrf
+            <div class="title">Welcome,<br><span>sign up to continue</span></div>
+            <input class="input" name="name" placeholder="Name" type="text">
+            <input class="input" name="password" placeholder="Password" type="password">
+
+            <button class="button-confirm">Masuk →</button>
+        </form>
+    </div>
     <div class="container"></div>
-</div>
+
+</body>
+
 
 </html>

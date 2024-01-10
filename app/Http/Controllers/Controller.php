@@ -25,6 +25,9 @@ class Controller extends BaseController
     }
     public function login()
     {
+        if (Auth::guard('web')->check()) {
+            return redirect()->route('admin');
+        }
         return view('login');
     }
     public function auth(Request $request)

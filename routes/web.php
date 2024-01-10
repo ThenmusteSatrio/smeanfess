@@ -16,8 +16,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 })->name('home');
+
+Route::get('/admindashboard', function () {
+    return view('admindashboard');
+})->name('admindashboard');
 
 Route::get('/dashboard', [Controller::class, 'index'])->name('/');
 
@@ -29,4 +33,7 @@ Route::middleware(['CekRole:admin', 'web'])->group(function () {
     Route::get('/admin', function () {
         return view('dummy');
     })->name('admin');
+});
+
+Route::middleware(['CekRole:superadmin', 'web'])->group(function () {
 });

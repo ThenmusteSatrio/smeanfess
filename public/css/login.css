@@ -1,6 +1,7 @@
 *{
   
    box-sizing: border-box;
+   margin: 0;
 }
 .container {
   position: fixed;
@@ -21,9 +22,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   overflow: hidden;
 }
+.judul{
+  margin-bottom: 20px;
+  font-size: 30px;
+}
 body{
+
   overflow: hidden;
 }
 .form {
