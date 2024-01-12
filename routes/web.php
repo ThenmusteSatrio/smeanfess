@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PesanController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -15,13 +16,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('Dashboard');
-})->name('home');
+Route::get('/', [PesanController::class, 'home'])->name('home');
 Route::get('/g', function () {
 });
 
-Route::get('/dashboard', [Controller::class, 'index'])->name('/');
+Route::get('/messages/fetch/{offset}/{status}', [PesanController::class, 'fetchMessages']);
 
 Route::get('/menfess', [Controller::class, 'menfess'])->name('menfess');
 Route::get('/kritik', [Controller::class, 'kritik'])->name('kritik');

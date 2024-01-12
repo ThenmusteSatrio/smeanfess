@@ -24,7 +24,7 @@ body{
     align-items: center;
 }
 .box {
-    width: 90%;
+    width: 50rem;
     height: 80vh;
     max-width: 800px;
     position: relative;
