@@ -16,12 +16,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('Dashboard');
 })->name('home');
-
-Route::get('/admindashboard', function () {
-    return view('admindashboard');
-})->name('admindashboard');
+Route::get('/g', function () {
+});
 
 Route::get('/dashboard', [Controller::class, 'index'])->name('/');
 

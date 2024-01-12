@@ -16,7 +16,11 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
-
+    'mysql' => [
+        'driver' => 'mysql',
+        // other configuration settings...
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | Database Connections
