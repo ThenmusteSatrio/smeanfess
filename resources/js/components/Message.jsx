@@ -4,14 +4,16 @@ const MessagesComponent = () => {
     const [messages, setMessages] = useState([]);
     const [offset, setOffset] = useState(0);
     const [status, setStatus] = useState('kritik');
+    const [notif, setNotif] = useState(false);
+    const [pesan, setPesan] = useState([]);
 
     useEffect(() => {
         fetchMessages();
     }, [status]);
 
 
-    const fetchMessages = async() => {
-        await fetch(`/messages/fetch/${offset}/${status}`)
+    const fetchMessages = () => {
+        fetch(`/messages/fetch/${offset}/${status}`)
             .then(response => response.json()).then(data => {
                 if (!data.messages.length == 0) { 
                     setMessages([...data.messages]);
@@ -23,8 +25,8 @@ const MessagesComponent = () => {
             });
     };
 
-    const decreseMessages = async(offsets) => {
-        await fetch(`/messages/fetch/${offsets}/${status}`)
+    const decreseMessages = (offsets) => {
+        fetch(`/messages/fetch/${offsets}/${status}`)
             .then(response => response.json()).then(data => {
                 if (!data.messages.length == 0) { 
                     setMessages([...data.messages]);
@@ -63,10 +65,27 @@ const MessagesComponent = () => {
     const menfess = () => {
         setStatus('menfess');
     }
-
     return (
         <>
-        <div className="container"></div>
+        <div class="container">
+
+        </div>
+        {
+            notif ? <div class={`b2`}>
+            <div class="card_message">
+                <div class="from">
+                    <h2>From : {pesan.from}</h2>
+                </div>
+                <div class="to">
+                    <h2>to : {pesan.to}</h2>
+                </div>
+                <div class="mess">
+                    <p>{pesan.pesan}</p>
+                </div>
+                <button class="mess_button" onClick={() => setNotif(!notif)}><ion-icon name="arrow-forward-outline"></ion-icon></button>
+            </div>
+        </div> : ''
+        }
         <div className="box">
             <div className="option_box">
                 <button onClick={kritik} className="comic-button">
@@ -83,13 +102,12 @@ const MessagesComponent = () => {
                         <p className="subtitle">{message.pesan}</p>
                     </div>
                     <div className="btn_view">
-                        <button><ion-icon name="mail-unread-outline"></ion-icon></button>
+                        <button onClick={() => {setNotif(!notif); setPesan(message); console.log(me)}}><ion-icon name="mail-unread-outline"></ion-icon></button>
                     </div>
                 </div>
-             ))}
+            ))}
         
             </div>
-        </div>
             <div className="pagechose">
                 <div className="btn_chose">
                     <button onClick={back}><ion-icon name="arrow-back-outline"></ion-icon></button>
@@ -98,6 +116,7 @@ const MessagesComponent = () => {
                     <button onClick={loadMore}><ion-icon name="arrow-forward-outline"></ion-icon></button>
                 </div>
             </div>
+        </div>
         </>
     );
 };

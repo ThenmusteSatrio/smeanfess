@@ -16,16 +16,18 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/home', function () {
+    return view('Dashboard');
 })->name('home');
-=======
 Route::get('/', [PesanController::class, 'home'])->name('home');
->>>>>>> 1adfcd559174a9c1d4be2fa5a0407fe61948111b
 Route::get('/g', function () {
     return view('message');
 });
+
+Route::get('/admin', function () {
+    return view('Dashboard');
+})->name('admin');
 
 Route::get('/messages/fetch/{offset}/{status}', [PesanController::class, 'fetchMessages']);
 
@@ -35,7 +37,7 @@ Route::get('login', [Controller::class, 'login'])->name('login');
 Route::post('/auth', [Controller::class, 'auth'])->name('auth');
 Route::middleware(['CekRole:admin', 'web'])->group(function () {
     Route::get('/admin', function () {
-        return view('dummy');
+        return view('Dashboard');
     })->name('admin');
 });
 

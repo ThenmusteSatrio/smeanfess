@@ -20,6 +20,8 @@ class PesanFactory extends Factory
     {
         return [
             'pesan' => $this->faker->realTextBetween($minNbChars = 50, $maxNbChars = 70, $indexSize = 2),
+            'from' => $this->faker->name(),
+            'to' => $this->faker->name(),
             'status' => $this->faker->randomElement(['menfess', 'kritik']),
         ];
     }
