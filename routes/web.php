@@ -16,9 +16,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    return view('Dashboard');
+    return view('welcome');
 })->name('home');
 Route::get('/g', function () {
+    return view('message');
 });
 
 Route::get('/dashboard', [Controller::class, 'index'])->name('/');

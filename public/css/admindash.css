@@ -12,6 +12,47 @@
     background-size: 55px 55px;
   }
 
+  .card_message{
+    background-color: #fff;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    width: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    box-shadow: #ff5252 10px 10px ;
+    position: relative;
+  }
+  .mess_button{
+    background-color: #fff;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: #ff5252 5px 5px ;
+    position: relative;
+    position: absolute;
+    bottom: 10px;
+    font-size: 20px;
+    width: 60px;
+    height: 40px;
+    right: 10px;
+
+  }
+  .mess {
+    padding-top: 20px;
+  }
+.b2 {
+  z-index: 40;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 *{
     margin: 0;
     box-sizing: border-box;
@@ -219,4 +260,7 @@ body{
     color: #ff5252;
     background-color: #fff;
     border: 2px solid #ff5252;
+  }
+  .d-none{
+    display: none;
   }
