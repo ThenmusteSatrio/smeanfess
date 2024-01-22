@@ -264,3 +264,70 @@ body{
   .d-none{
     display: none;
   }
+
+  .addAdmin {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 125px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+   }
+   
+   .addAdmin, .addAdmin span {
+    transition: 200ms;
+   }
+   
+   .addAdmin .text {
+    transform: translateX(-20px);
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+   }
+   
+   .addAdmin .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(80px);
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .addAdmin svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   .addAdmin:hover {
+    background: #ff3636;
+   }
+   
+   .addAdmin:hover .text {
+    color: transparent;
+   }
+   
+   .addAdmin:hover .icon {
+    border-left: none;
+    font-size: 30px;
+    transform: translateX(35px);
+   }
+   
+   .addAdmin:focus {
+    outline: none;
+   }
+   
+   .addAdmin:active .icon  {
+    font-size: 40px;
+   }

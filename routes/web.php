@@ -21,8 +21,11 @@ Route::get('/home', function () {
     return view('Dashboard');
 })->name('home');
 Route::get('/', [PesanController::class, 'home'])->name('home');
-Route::get('/g', function () {
+Route::get('/SendMessage', function () {
     return view('message');
+});
+Route::get('/new', function () {
+    return view('newAdmin');
 });
 
 Route::get('/admin', function () {
