@@ -14,13 +14,13 @@
 
     <div class="box">
 
-        <form class="form" action="{{ route('auth') }}" method="POST">
+        <form class="form" action="{{ route('newAdmin') }}" method="POST">
             @csrf
             <div class="title"><span>Create New Admin</span></div>
             <input class="input" name="name" placeholder="Name" type="text">
             <input class="input" name="password" placeholder="Password" type="password">
 
-            <button class="button-confirm">Add →</button>
+            <button type="submit" class="button-confirm">Add →</button>
         </form>
     </div>
     <div class="container"></div>

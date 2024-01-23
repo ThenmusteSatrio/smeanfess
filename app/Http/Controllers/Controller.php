@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pesan;
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -16,6 +16,18 @@ class Controller extends BaseController
     public function index()
     {
         return view('dashboard');
+    }
+
+    public function newAdmin(Request $request)
+    {
+        $result = User::create([
+            'name' => $request->input('name'),
+            'password' => bcrypt($request->input('password')),
+            'role' => 'admin',
+        ]);
+        if ($result) {
+            return redirect()->route('admin');
+        }
     }
     public function menfess()
     {

@@ -11,8 +11,9 @@
 @vite('resources/js/app.jsx')
 
 <body>
-	
-<button class="noselect addAdmin"><span class="text">Add Admin</span><span class="icon"><ion-icon name="add-outline"></ion-icon></span></button>
+	<a href="/new">
+		<button class="noselect addAdmin"><span class="text">Add Admin</span><span class="icon"><ion-icon name="add-outline"></ion-icon></span></button>
+	</a>
 	<div id="app"></div>
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

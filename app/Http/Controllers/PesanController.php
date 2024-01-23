@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pesan;
 use App\Http\Requests\StorePesanRequest;
 use App\Http\Requests\UpdatePesanRequest;
-
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 
 class PesanController extends Controller
 {
@@ -16,6 +15,33 @@ class PesanController extends Controller
     public function index()
     {
         //
+    }
+
+    public function kirimmenfess(Request $request)
+    {
+        $result = Pesan::create([
+            'pesan' => $request->input('pesan'),
+            'from' => $request->input('from'),
+            'to' => $request->input('to'),
+            'status' => 'menfess',
+        ]);
+
+        if ($result) {
+            return redirect()->route('welcome');
+        }
+    }
+    public function kirimkritik(Request $request)
+    {
+        $result = Pesan::create([
+            'pesan' => $request->input('pesan'),
+            'from' => $request->input('from'),
+            'to' => $request->input('to'),
+            'status' => 'kritik',
+        ]);
+
+        if ($result) {
+            return redirect()->route('welcome');
+        }
     }
 
     /**

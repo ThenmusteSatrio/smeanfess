@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/message.css">
-    <title>Kirim pesan</title>
+    <title>Kirim Menfess</title>
 </head>
 
 <body>
@@ -14,10 +14,10 @@
 
     <div class="main">
         <div class="text_group">
-            <h2>Kirim Pesan Anonim</h2>
+            <h2>Kirim Menfess Anonim</h2>
             <p>kirim pesan rahasia untuk kritik atau menfess</p>
         </div>
-        <form action="{{ route('kirimkritik') }}" method="POST" class="input_box">
+        <form action="{{ route('kirimmenfess') }}" method="POST" class="input_box">
             @csrf
             <input type="text" name="from" placeholder="From">
             <input type="text" name="to" placeholder="To">
