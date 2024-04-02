@@ -44,6 +44,9 @@ Route::get('/kritik', [Controller::class, 'kritik'])->name('kritik');
 Route::get('login', [Controller::class, 'login'])->name('login');
 Route::post('/auth', [Controller::class, 'auth'])->name('auth');
 Route::middleware(['CekRole:admin', 'web'])->group(function () {
+});
+
+Route::middleware(['CekRole:superadmin', 'web'])->group(function () {
     Route::get('/new', function () {
         return view('newAdmin');
     });
@@ -51,8 +54,10 @@ Route::middleware(['CekRole:admin', 'web'])->group(function () {
         return view('Dashboard');
     })->name('admin');
 
-    Route::post('/newAdmin', [Controller::class, 'newAdmin'])->name('newAdmin');
-});
+    Route::get('/logout', function () {
+        session()->flush();
+        return redirect('/');
+    });
 
-Route::middleware(['CekRole:superadmin', 'web'])->group(function () {
+    Route::post('/newAdmin', [Controller::class, 'newAdmin'])->name('newAdmin');
 });

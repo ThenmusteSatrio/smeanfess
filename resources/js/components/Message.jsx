@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 const MessagesComponent = () => {
     const [messages, setMessages] = useState([]);
     const [offset, setOffset] = useState(0);
@@ -9,6 +10,8 @@ const MessagesComponent = () => {
 
     useEffect(() => {
         fetchMessages();
+        const storedSuccessMessage = localStorage.getItem('success_message');
+        console.log(storedSuccessMessage);
     }, [status]);
 
 
@@ -61,10 +64,15 @@ const MessagesComponent = () => {
 
     const kritik = () => {
         setStatus('kritik');
+        fetchMessages();
+        setOffset(0);
     }
     const menfess = () => {
         setStatus('menfess');
+        fetchMessages();
+        setOffset(0);
     }
+
     return (
         <>
         <div class="container">

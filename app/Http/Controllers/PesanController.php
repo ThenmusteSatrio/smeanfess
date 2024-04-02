@@ -40,7 +40,7 @@ class PesanController extends Controller
         ]);
 
         if ($result) {
-            return redirect()->route('welcome');
+            return redirect()->route('welcome')->with('success', 'Pesan Terkirim');
         }
     }
 
@@ -101,7 +101,7 @@ class PesanController extends Controller
         $offset = $offset;
         $limit = 7;
 
-        $messages = Pesan::where('status', $status)->skip($offset)->take($limit)->get();
+        $messages = Pesan::where('status', $status)->skip($offset)->take($limit)->latest()->get();
         return response()->json(['messages' => $messages]);
     }
 }

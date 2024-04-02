@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert as ComponentsAlert;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+
 
 class Controller extends BaseController
 {
@@ -26,7 +28,7 @@ class Controller extends BaseController
             'role' => 'admin',
         ]);
         if ($result) {
-            return redirect()->route('admin');
+            return redirect()->route('admin')->with('success', 'Admin Ditambahkan');
         }
     }
     public function menfess()

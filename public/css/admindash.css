@@ -65,7 +65,7 @@ body{
     align-items: center;
 }
 .box {
-    width: 90%;
+    width: 90vw;
     height: 80vh;
     max-width: 800px;
     position: relative;
@@ -265,10 +265,21 @@ body{
     display: none;
   }
 
-  .addAdmin {
+  .nav{
+    width: 100vw;
+    padding-left: 20px;
     position: fixed;
     top: 10px;
-    right: 10px;
+    left: 0;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav a {
+    text-decoration: none;
+  }
+  .addAdmin {
     width: 125px;
     height: 40px;
     cursor: pointer;
